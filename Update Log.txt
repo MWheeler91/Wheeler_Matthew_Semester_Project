@@ -1,0 +1,69 @@
+﻿Rolling Log / update txt for my project
+Updates Needed:
+		add error checking 
+		Add a log file to catch expections
+		First/last/phone/email can be written as null in the database eventhough they are checked not null
+		There is an issue where if there are two two clients with the same name the listbox will show two entries however it will only fill the lookup form with the data from the first entry.
+			The issue is happening on the notes page too.
+
+
+11/7/20
+	added a new textbox to the look up client field for the client's ID in the database.
+	Fixed the note page.  Now the client's name and the client ID from the database is passed to the note page so writing to the database can be done using the clientID instead of the client's name
+	fixed the issue with the look up phone numbers throwing a format expecption because the string could not be converted to the (xxx) xxx - xxxx format I was wanting.
+	For some reason I changed the ZIP sql write function to an INT from a STRING.  This was causing a format exception when looking up a client that did not have a zip code entered.  I changed it back to a string function and returned the value as a string.
+	removed the refresh button from the notes page and added a function call in the submit button to refresh the listbox to show the newly added note.
+	Fix issue on the note page where if two notes were entered on the same date, both instances would be the same note.  (fixed by adding the time the note was written)
+		
+
+11/6/20
+	
+
+
+11/6/20 
+	Finished all SQL statements for new client and look up client.
+	Clientinfo table has been split into client info and med info  with FK set up
+	I can now query the database and pull notes based on the date.
+	fixed the issue below where 4 check boxes were not checking.  the checkbox had their names reset to default (Checkbox1 etc.)  I'm getting an error that the names I was using are taken on the form, so i renamed them to cb(itemname)1.
+
+
+
+
+10/30/20
+	All sql statements are working currently.  4 checkboxes for some reason are not checking.  I'm not sure why
+	The program is super slow now with all the SQL statements.  This needs to be fixed.
+
+
+10/28/20
+	Goal:
+		update the look-up form to reflect changes made to new client form
+		get the functionality of the lookup client form
+		Assuming the above goes fairly quick, start working on newclient functionality to not require all fields to be filled out.
+
+
+
+10/27/2020
+	Still Need:
+		Create note form
+		Start working on look-up client to populate data
+		Correct checkboxes on Look-up client
+
+	database has been connected
+	Writing to database is kinda working.  I am able to write a client but not their medical history.  I assume this has something to do with the composition getting "unknown error, insufficient parameters supplied to the command"
+	
+	Update:
+		I just combinded both my classes into 1 class and wrote one massive sql statement.  It is working, however, functionality needs to be added so that every text box does not need to have text and will either write an empty string, or null value.
+
+10/16/2020
+*******FIXED******Need to update SQL server data type for last name.  Getting error currently and cannot update it.  it is updated in SQLite
+Ask about DoB get/set data type.  Should this be a datetime field or be left as a string or int?
+Ask about the constructor 
+
+
+Still needed:
+	Connect the database - done
+	Finish constructor - done 
+	Create the note form
+	Start working on look-up client to populate data
+	Correct checkboxes on Look-up client
+	change datetime on lookup client to a txtbox - done
