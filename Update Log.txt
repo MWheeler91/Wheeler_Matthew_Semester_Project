@@ -4,7 +4,7 @@
  	Need to rework the project using proper databinding with the database
 	Connect app to a proper cloud database
 	Intergrate auth.
- 
+ 	KNOWN BUG:  When searching by last name, if two clients have the same last name then the form only updates to the first client found.
  
 Updates Needed:
 		add error checking 
